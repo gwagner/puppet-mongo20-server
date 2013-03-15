@@ -1,0 +1,10 @@
+# mongo.conf
+logpath=<%= scope.lookupvar "mongo20-server::config::logdir" %>mongod.log
+logappend=true
+fork = true
+port = 27017
+dbpath=<%= scope.lookupvar "mongo20-server::config::data_store" %>
+auth=true
+keyFile=/etc/mongo-secret-key
+rest=true
+replSet=<%= scope.lookupvar "mongo20-server::config::replica_set" %>
